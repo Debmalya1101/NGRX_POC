@@ -1,0 +1,20 @@
+<div class="row my-3 flex justify-content-center">
+    <div class="col-md-4">
+        <h3>Add New Post</h3>
+        <form [formGroup]="postForm" (ngSubmit)="onAddPost()">
+            <div class="mb-3">
+                <label><h6>Title</h6></label>
+                <input type="text" class="form-control" formControlName="title">
+                <div style="color: red;"><small>{{titleErrorMessage}}</small></div>
+            </div>
+            <div class="mb-3">
+                <label><h6>Description</h6></label>
+                <textarea class="form-control" formControlName="description"></textarea>
+                <div style="color: red;"><small>{{descriptionErrorMessage}}</small></div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary" [disabled] = "postForm.invalid">ADD</button>
+            </div>
+        </form>
+    </div>
+</div>

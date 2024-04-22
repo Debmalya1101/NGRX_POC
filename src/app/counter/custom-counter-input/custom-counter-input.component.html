@@ -1,0 +1,9 @@
+<div>
+    <div class="my-3">{{displayText}}</div>
+    <input type="text" placeholder="Enter the value" [(ngModel)]="value">&nbsp;
+    <button class="btn btn-primary" (click)="onAdd()">Add to counter</button>
+</div>
+
+<div class="my-3">
+    <button (click)="onClickChangeText()" class="btn btn-primary">Change Text</button>
+</div>
