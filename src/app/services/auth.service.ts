@@ -17,11 +17,11 @@ export class AuthService {
   constructor(private http: HttpClient, private store : Store<AppState>) { }
 
   login(email: string, password: string) : Observable<AuthResponseData> {
-    return this.http.post<AuthResponseData>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyA70iIMJBMg3FUgeRrFlhiN5OtUB5sZiho`, { email, password, returnSecureToken: true });
+    return this.http.post<AuthResponseData>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]`, { email, password, returnSecureToken: true });
   }
 
   signUp(email: string, password: string) : Observable<AuthResponseData> {
-    return this.http.post<AuthResponseData>(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyA70iIMJBMg3FUgeRrFlhiN5OtUB5sZiho`, { email, password, returnSecureToken: true });
+    return this.http.post<AuthResponseData>(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API_KEY]`, { email, password, returnSecureToken: true });
   }
 
   formatUser(data : AuthResponseData){
